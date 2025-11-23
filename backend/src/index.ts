@@ -14,8 +14,8 @@ const PORT = process.env.PORT || 3001;
 
 // 中间件
 app.use(cors());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json({ limit: '50mb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 
 // 静态文件服务（用于提供上传的图片）
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
