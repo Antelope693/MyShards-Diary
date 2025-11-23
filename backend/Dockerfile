@@ -2,10 +2,14 @@ FROM node:20-alpine
 
 WORKDIR /app
 
+# 使用国内镜像源加速（如果服务器在国内，取消下面这行的注释）
+# 如果服务器在国外，请保持注释状态
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories || true
+
 # 安装构建依赖（sqlite3 需要编译原生模块）
 # 添加 sqlite 库和构建工具
 # py3-setuptools 提供 distutils（Python 3.12+ 需要）
-RUN apk add --no-cache \
+RUN apk add --no-cache --update-cache \
     sqlite \
     sqlite-dev \
     python3 \
