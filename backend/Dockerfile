@@ -3,7 +3,10 @@ FROM node:20-alpine
 WORKDIR /app
 
 # 安装构建依赖（sqlite3 需要编译原生模块）
+# 添加 sqlite 库和构建工具
 RUN apk add --no-cache \
+    sqlite \
+    sqlite-dev \
     python3 \
     make \
     g++ \
@@ -13,7 +16,9 @@ RUN apk add --no-cache \
 COPY package*.json ./
 
 # 安装所有依赖（包括开发依赖，用于构建）
-RUN npm install
+# 设置环境变量以优化构建
+ENV npm_config_build_from_source=true
+RUN npm install --verbose
 
 # 复制源代码
 COPY . .
