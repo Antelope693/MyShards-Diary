@@ -1,6 +1,17 @@
-# 📔 MyShards - 个人日记系统
+# 📔 MyShards - 个人日记系统 by 羚羊
 
 一个优雅、现代的日记系统，支持 Markdown、图片上传、评论等功能。
+
+## 📸 界面展示
+
+### 首页展示
+![首页展示](./frontend/img/首页展示.png)
+
+### 时间轴展示
+![时间轴展示](./frontend/img/时间轴展示.png)
+
+### 后台管理
+![后台展示](./frontend/img/后台展示.png)
 
 ## ✨ 特性
 
@@ -184,15 +195,11 @@ Diary/
 
 本项目采用 MIT 许可证。
 
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request！
-
 ## 📞 支持
 
 如有问题，请：
 1. 查看文档
-2. 检查日志：`docker-compose logs`
+2. 检查日志：`docker-compose logs`，提供给3112989263@qq.com
 3. 提交 Issue
 
 ---

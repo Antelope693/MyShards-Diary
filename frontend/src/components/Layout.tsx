@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, Github, Mail } from 'lucide-react';
 import { useEffect } from 'react';
 
 interface LayoutProps {
@@ -70,6 +70,41 @@ export default function Layout({ children }: LayoutProps) {
               >
                 首页
               </Link>
+              {/* 社交图标 */}
+              <div className="flex items-center space-x-3 sm:space-x-4 ml-2 sm:ml-4">
+                <a
+                  href="https://github.com/Antelope693/MyShards-Diary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 hover:text-purple-600 transition-colors duration-300 hover:scale-110 transform"
+                  aria-label="GitHub"
+                >
+                  <Github className="w-5 h-5 sm:w-6 sm:h-6" />
+                </a>
+                <a
+                  href="https://space.bilibili.com/369400196?spm_id_from=333.1007.0.0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-700 hover:text-pink-500 transition-colors duration-300 hover:scale-110 transform"
+                  aria-label="Bilibili"
+                >
+                  <svg
+                    className="w-5 h-5 sm:w-6 sm:h-6"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M17.381 18.056c-1.226 0-2.381-.49-3.236-1.354l-1.354-1.354c-.49-.49-1.226-.49-1.716 0l-1.354 1.354c-.855.864-2.01 1.354-3.236 1.354H2.5v-12h5.625c1.226 0 2.381.49 3.236 1.354l1.354 1.354c.49.49 1.226.49 1.716 0l1.354-1.354c.855-.864 2.01-1.354 3.236-1.354H21.5v12h-4.119zm-1.5-10.5c0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5.672 1.5 1.5 1.5 1.5-.672 1.5-1.5zm-6 0c0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5.672 1.5 1.5 1.5 1.5-.672 1.5-1.5z"/>
+                  </svg>
+                </a>
+                <a
+                  href="mailto:Twaion2025@outlook.com"
+                  className="text-gray-700 hover:text-blue-600 transition-colors duration-300 hover:scale-110 transform"
+                  aria-label="Email"
+                >
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
