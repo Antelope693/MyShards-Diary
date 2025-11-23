@@ -4,10 +4,12 @@ WORKDIR /app
 
 # 安装构建依赖（sqlite3 需要编译原生模块）
 # 添加 sqlite 库和构建工具
+# py3-setuptools 提供 distutils（Python 3.12+ 需要）
 RUN apk add --no-cache \
     sqlite \
     sqlite-dev \
     python3 \
+    py3-setuptools \
     make \
     g++ \
     && ln -sf python3 /usr/bin/python
