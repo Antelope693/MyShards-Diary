@@ -7,4 +7,6 @@ dist/
 *.db
 *.db-journal
 data/
+backend/uploads/*
+!backend/uploads/.gitkeep
 
