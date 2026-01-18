@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #fdfbf7 0%, #eef2ff 50%, #f3e8ff 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* 时间轴滚动动画 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.timeline-item {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.timeline-item.opacity-100 {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.timeline-node {
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.timeline-node.opacity-100 {
+  animation: slideInScale 0.5s ease-out forwards;
+}
+
+.timeline-line {
+  background: linear-gradient(
+    to bottom,
+    rgba(99, 102, 241, 0.15) 0%,
+    rgba(139, 92, 246, 0.2) 25%,
+    rgba(168, 85, 247, 0.25) 50%,
+    rgba(139, 92, 246, 0.2) 75%,
+    rgba(99, 102, 241, 0.15) 100%
+  );
+  background-size: 100% 400%;
+  animation: gradientFlow 15s ease-in-out infinite;
+}
+
+@keyframes gradientFlow {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+}
+
+/* 字体类 */
+.font-title {
+  font-family: 'Noto Serif SC', 'Ma Shan Zheng', serif;
+}
+
+.font-title-cute {
+  font-family: 'ZCOOL QingKe HuangYou', 'ZCOOL KuaiLe', cursive;
+}
+
+.font-body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* 文字效果类 */
+.text-shadow-soft {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.text-shadow-medium {
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-strong {
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.text-shadow-color {
+  text-shadow: 0 2px 4px rgba(99, 102, 241, 0.3), 0 4px 8px rgba(139, 92, 246, 0.2);
+}
+
+.text-shadow-glow {
+  text-shadow: 0 0 10px rgba(99, 102, 241, 0.5), 0 0 20px rgba(139, 92, 246, 0.3), 0 0 30px rgba(168, 85, 247, 0.2);
+}
+
+.text-elegant {
+  font-family: 'Noto Serif SC', serif;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.text-cursive {
+  font-family: 'Ma Shan Zheng', 'ZCOOL QingKe HuangYou', cursive;
+  font-style: italic;
+}
+
+.text-decorative {
+  font-family: 'ZCOOL QingKe HuangYou', 'ZCOOL KuaiLe', cursive;
+  letter-spacing: 0.1em;
+}
+
+/* 移动端优化 */
+@media (max-width: 640px) {
+  .content-renderer {
+    font-size: 0.9rem;
+  }
+  
+  .content-renderer img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  .content-renderer table {
+    font-size: 0.8rem;
+  }
+  
+  .content-renderer pre {
+    font-size: 0.75rem;
+    padding: 0.75rem;
+  }
+}
+

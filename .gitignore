@@ -1,0 +1,24 @@
+
+node_modules/
+dist/
+*.log
+.env
+.env.local
+.DS_Store
+*.db
+*.db-journal
+*.sqlite
+.gemini/
+artifacts/
+.vscode/
+data/
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Temp scripts
+test_*.js
+clean_*.js
+inspect_*.ts
+fix_*.sql
+fix_*.ps1
+test-mirror.sh

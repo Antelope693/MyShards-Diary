@@ -1,0 +1,61 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: diary-backend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/uploads:/app/uploads
+    environment:
+      - PORT=3001
+      - NODE_ENV=production
+      - MAINTAINER_USERNAME=${MAINTAINER_USERNAME:-羚羊}
+      - MAINTAINER_EMAIL=${MAINTAINER_EMAIL:-antelope@example.com}
+      - MAINTAINER_PASSWORD=${MAINTAINER_PASSWORD:-ChangeMe123!}
+      - JWT_SECRET=${JWT_SECRET:-dev-secret}
+      - DB_TYPE=${DB_TYPE:-postgres}
+      - DB_HOST=${DB_HOST:-db}
+      - DB_PORT=${DB_PORT:-5432}
+      - DB_USER=${DB_USER:-diary_user}
+      - DB_PASSWORD=${DB_PASSWORD:-diary_pass}
+      - DB_NAME=${DB_NAME:-diary_db}
+    restart: unless-stopped
+    networks:
+      - diary-network
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine
+    container_name: diary-db
+    environment:
+      POSTGRES_USER: ${DB_USER:-diary_user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-diary_pass}
+      POSTGRES_DB: ${DB_NAME:-diary_db}
+    volumes:
+      - ./backend/data/postgres:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - diary-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - VITE_API_URL=/api
+    container_name: diary-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - diary-network
+
+networks:
+  diary-network:
+    driver: bridge

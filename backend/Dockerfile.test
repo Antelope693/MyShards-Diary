@@ -1,0 +1,21 @@
+# 测试 Dockerfile - 用于验证镜像源是否可用
+# 使用方法: docker build -f backend/Dockerfile.test -t diary-test backend/
+
+FROM node:20-alpine
+
+WORKDIR /app
+
+# 测试镜像源（取消注释要测试的源）
+# 默认使用阿里云镜像
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories || true
+
+# 测试安装一个小包来验证镜像源是否可用
+RUN echo "测试镜像源可用性..." && \
+    apk update && \
+    apk add --no-cache curl && \
+    curl --version && \
+    echo "✅ 镜像源测试成功！"
+
+# 如果上面的步骤成功，说明镜像源可用
+# 如果失败，请尝试其他镜像源或检查网络连接
+
