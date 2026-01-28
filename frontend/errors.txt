@@ -1,0 +1,13 @@
+﻿src/components/CollectionCard.tsx(2,1): error TS6133: 'React' is declared but its value is never read.
+src/components/CollectionModal.tsx(2,8): error TS6133: 'React' is declared but its value is never read.
+src/components/CollectionModal.tsx(5,13): error TS6133: 'Calendar' is declared but its value is never read.
+src/components/CollectionModal.tsx(5,23): error TS6133: 'Pin' is declared but its value is never read.
+src/components/CollectionModal.tsx(5,28): error TS6133: 'Lock' is declared but its value is never read.
+src/components/DiaryCardContent.tsx(2,1): error TS6133: 'React' is declared but its value is never read.
+src/components/DiaryCardContent.tsx(4,55): error TS6133: 'ImageIcon' is declared but its value is never read.
+src/components/TimelineNavigator.tsx(2,1): error TS6133: 'React' is declared but its value is never read.
+src/pages/Home.tsx(4,23): error TS6133: 'Plus' is declared but its value is never read.
+src/pages/Home.tsx(4,29): error TS6133: 'Layers' is declared but its value is never read.
+src/pages/Home.tsx(9,1): error TS6133: 'Button' is declared but its value is never read.
+src/pages/Home.tsx(36,9): error TS6133: 'navigate' is declared but its value is never read.
+src/pages/Home.tsx(49,9): error TS6133: 'user' is declared but its value is never read.

@@ -1,0 +1,22 @@
+{
+  "links": [
+    {
+      "name": "MyShards-Diary · 官方部署",
+      "url": "https://diary.antelope693.com",
+      "region": "中国 · 杭州",
+      "description": "原作者维护的展示站点，提供了全部最新功能。",
+      "contact": "Twaion2025@outlook.com",
+      "updated_at": "2025-11-24T02:30:00+08:00"
+    },
+    {
+      "name": "MyShards-Diary · 台湾社群",
+      "url": "https://tw.myshards.club",
+      "region": "中国台湾",
+      "description": "繁体社区维护，着重分享本地化主题和部署教程。",
+      "contact": "hi@myshards.club",
+      "updated_at": "2025-11-23T18:00:00+08:00"
+    }
+  ]
+}
+
+
