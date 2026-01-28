@@ -53,4 +53,4 @@ MyShards 是一个优雅、现代化的个人日记与创作空间系统。它�
 本项目采用 MIT 许可证开源。你可以自由使用、修改和分发，但请保留原作者 (Antelope693) 的版权声明。
 
 ---
-*Created with ❤️ by 羚羊*
+*Created with  by 羚羊
